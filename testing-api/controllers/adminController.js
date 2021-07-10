@@ -78,7 +78,7 @@ module.exports = {
   getQueue: async (req, res) => {
     try {
       var queue = await Visitor.find().estimatedDocumentCount()
-      queue += 1
+      // queue += 1
 
       if (queue < 10) {
         queue = `A00${queue}`
