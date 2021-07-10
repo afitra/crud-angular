@@ -1,0 +1,112 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <h2 class="h2 mt-5 mb-3">Input/Register Visitor</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="registerVisitor()">
+            <div>
+                  <div class="form-group">
+                    <label>name <span style="color: crimson;">*</span></label>
+                    <input class="form-control" type="text" formControlName="name" required>
+                    <div class="error-text" *ngIf="registerForm.controls.name.hasError('required') && registerForm.controls.name.touched">
+                      <p style="color: brown;">Please enter your name</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>pic <span style="color: crimson;">*</span></label>
+                    <input class="form-control" type="text" formControlName="pic" required>
+                    <div class="error-text" *ngIf="registerForm.controls.pic.hasError('required') && registerForm.controls.pic.touched">
+                      <p style="color: brown;">Please enter your pic</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>city <span style="color: crimson;">*</span></label>
+                    <input class="form-control" type="text" formControlName="city" required>
+                    <div class="error-text" *ngIf="registerForm.controls.city.hasError('required') && registerForm.controls.city.touched">
+                      <p style="color: brown;">Please enter your city</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>remark <span style="color: crimson;">*</span></label>
+                    <input class="form-control" type="text" formControlName="remark" required>
+                    <div class="error-text" *ngIf="registerForm.controls.remark.hasError('required') && registerForm.controls. remark.touched">
+                      <p style="color: brown;">Please enter your remark</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>npwp <span style="color: crimson;">*</span></label>
+                    <input class="form-control" type="text" formControlName="npwp" required>
+                    <div class="error-text" *ngIf="registerForm.controls.npwp.hasError('required') && registerForm.controls.npwp.touched">
+                      <p style="color: brown;">Please enter yournpwp </p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>costumer_category <span style="color: crimson;">*</span></label>
+                    <input class="form-control" type="text" formControlName="costumer_category" required>
+                    <div class="error-text" *ngIf="registerForm.controls.costumer_category.hasError('required') && registerForm.controls.costumer_category.touched">
+                      <p style="color: brown;">Please enter your costumer_category </p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>address1 <span style="color: crimson;">*</span></label>
+                    <input class="form-control" type="text" formControlName="address1" required>
+                    <div class="error-text" *ngIf="registerForm.controls.address1.hasError('required') && registerForm.controls.address1.touched">
+                      <p style="color: brown;">Please enter your address1 </p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>address2 <span style="color: crimson;">*</span></label>
+                    <input class="form-control" type="text" formControlName="address2" required>
+                    <div class="error-text" *ngIf="registerForm.controls.address2.hasError('required') && registerForm.controls.address2.touched">
+                      <p style="color: brown;">Please enter your address2 </p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>contact <span style="color: crimson;">*</span></label>
+                    <input class="form-control" type="text" formControlName="contact" required>
+                    <div class="error-text" *ngIf="registerForm.controls.contact.hasError('required') && registerForm.controls.contact.touched">
+                      <p style="color: brown;">Please enter your contact </p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>region <span style="color: crimson;">*</span></label>
+                    <input class="form-control" type="text" formControlName="region" required>
+                    <div class="error-text" *ngIf="registerForm.controls.region.hasError('required') && registerForm.controls.region.touched">
+                      <p style="color: brown;">Please enter your region </p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>province <span style="color: crimson;">*</span></label>
+                    <input class="form-control" type="text" formControlName="province" required>
+                    <div class="error-text" *ngIf="registerForm.controls.province.hasError('required') && registerForm.controls.province.touched">
+                      <p style="color: brown;">Please enter your province </p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>expedition <span style="color: crimson;">*</span></label>
+                    <input class="form-control" type="text" formControlName="expedition" required>
+                    <div class="error-text" *ngIf="registerForm.controls.expedition.hasError('required') && registerForm.controls.expedition.touched">
+                      <p style="color: brown;">Please enter your expedition </p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>sales_id <span style="color: crimson;">*</span></label>
+                    <!-- <input class="form-control" type="text" formControlName="sales_id" required> -->
+                    <select class="form-select form-select-sm mb-3" aria-label="Default select example" formControlName="sales_id" required>
+                      <option selected value="">pilih salesman</option>
+                      <option *ngFor="let sales of salesList; let i = index" value={{sales._id}}>{{sales.name}}</option>
+                      
+                    </select>
+                    <div class="error-text" *ngIf="registerForm.controls.sales_id.hasError('required') && registerForm.controls.sales_id.touched">
+                      <p style="color: brown;">Please enter your sales_id </p>
+                    </div>
+                    
+                  </div>
+                 
+                  
+                  
+                  
+                  
+             </div>
+             <button type="button" class="btn btn-primary"   type="submit">Register Visitor</button>
+ 
+          </form>
+</div>

@@ -1,0 +1,74 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h2 class="h2">Visitor List</h2>
+      
+    </div>
+  
+    <div class="table-responsive table-wrapper-scroll-x my-custom-scrollbar">
+      <table class="table table-bordered table-fixed" style="height:800px;overflow-y:auto;display:  block">
+        <thead  >
+          <tr  >
+            <th  scope="col">#</th>
+            <th  scope="col">name</th>
+            <th  scope="col">city</th>
+            <th  scope="col">remark</th>
+            <th  scope="col">npwp</th>
+            <th  scope="col">costumer_category</th>
+            <th  scope="col">addres1</th>
+            <th  scope="col">addres2</th>
+            <th  scope="col">contact</th>
+            <th  scope="col">region</th>
+            <th  scope="col">province</th>
+            <th  scope="col">expedition</th>
+            <th  scope="col">sales_id</th>
+           
+           
+            <th class="text-center" scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor="let item of visitor; let i = index" >
+            <th scope="row"> {{i+1}}</th>
+            <td> {{item.name}}</td>
+            <td> {{item.pic}}</td>
+            <td> {{item.city}}</td>
+            <td> {{item.remark}}</td>
+            <td> {{item.npwp}}</td>
+            <td> {{item.costumer_category}}</td>
+            <td> {{item.address1}}</td>
+            <td> {{item.address2}}</td>
+            <td> {{item.contact}}</td>
+            <td> {{item.region}}</td>
+            <td> {{item.province}}</td>
+            <td> {{item.expedition}}</td>
+            <td> {{item.sales_id.name}}</td>
+           
+             
+            <td class="text-center">
+              <button class="btn btn-sm btn-primary mb-3" routerLink="/visitor_detail/{{item._id}}"  >Edit</button>
+              <button class="btn btn-sm btn-danger" (click)="deleteVisitor(item._id, i)" >Delete</button>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+ 
+
+
+
+
+  <!-- name,
+  pic,
+  city,
+  remark,
+  npwp,
+  costumer_category,
+  address1,
+  address2,
+  contact,
+  region,
+  province,
+  expedition,
+  sales_id, -->

@@ -1,0 +1,122 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <h2 class="h2">Edit Visitor</h2>
+    <div class="row justify-content-center mt-5">
+        <form [formGroup]="editForm" (ngSubmit)="editVisitor()">
+            <div class="modal-body">
+               
+              <div>
+                <div class="form-group">
+                  <label>name <span style="color: crimson;">*</span></label>
+                  <input class="form-control" type="text" formControlName="name" required>
+                  <div class="error-text" *ngIf="editForm.controls.name.hasError('required') && editForm.controls.name.touched">
+                    <p style="color: brown;">Please enter your name</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>pic <span style="color: crimson;">*</span></label>
+                  <input class="form-control" type="text" formControlName="pic" required>
+                  <div class="error-text" *ngIf="editForm.controls.pic.hasError('required') && editForm.controls.pic.touched">
+                    <p style="color: brown;">Please enter your pic</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>city <span style="color: crimson;">*</span></label>
+                  <input class="form-control" type="text" formControlName="city" required>
+                  <div class="error-text" *ngIf="editForm.controls.city.hasError('required') && editForm.controls.city.touched">
+                    <p style="color: brown;">Please enter your city</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>remark <span style="color: crimson;">*</span></label>
+                  <input class="form-control" type="text" formControlName="remark" required>
+                  <div class="error-text" *ngIf="editForm.controls.remark.hasError('required') && editForm.controls. remark.touched">
+                    <p style="color: brown;">Please enter your remark</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>npwp <span style="color: crimson;">*</span></label>
+                  <input class="form-control" type="text" formControlName="npwp" required>
+                  <div class="error-text" *ngIf="editForm.controls.npwp.hasError('required') && editForm.controls.npwp.touched">
+                    <p style="color: brown;">Please enter yournpwp </p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>costumer_category <span style="color: crimson;">*</span></label>
+                  <input class="form-control" type="text" formControlName="costumer_category" required>
+                  <div class="error-text" *ngIf="editForm.controls.costumer_category.hasError('required') && editForm.controls.costumer_category.touched">
+                    <p style="color: brown;">Please enter your costumer_category </p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>address1 <span style="color: crimson;">*</span></label>
+                  <input class="form-control" type="text" formControlName="address1" required>
+                  <div class="error-text" *ngIf="editForm.controls.address1.hasError('required') && editForm.controls.address1.touched">
+                    <p style="color: brown;">Please enter your address1 </p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>address2 <span style="color: crimson;">*</span></label>
+                  <input class="form-control" type="text" formControlName="address2" required>
+                  <div class="error-text" *ngIf="editForm.controls.address2.hasError('required') && editForm.controls.address2.touched">
+                    <p style="color: brown;">Please enter your address2 </p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>contact <span style="color: crimson;">*</span></label>
+                  <input class="form-control" type="text" formControlName="contact" required>
+                  <div class="error-text" *ngIf="editForm.controls.contact.hasError('required') && editForm.controls.contact.touched">
+                    <p style="color: brown;">Please enter your contact </p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>region <span style="color: crimson;">*</span></label>
+                  <input class="form-control" type="text" formControlName="region" required>
+                  <div class="error-text" *ngIf="editForm.controls.region.hasError('required') && editForm.controls.region.touched">
+                    <p style="color: brown;">Please enter your region </p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>province <span style="color: crimson;">*</span></label>
+                  <input class="form-control" type="text" formControlName="province" required>
+                  <div class="error-text" *ngIf="editForm.controls.province.hasError('required') && editForm.controls.province.touched">
+                    <p style="color: brown;">Please enter your province </p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>expedition <span style="color: crimson;">*</span></label>
+                  <input class="form-control" type="text" formControlName="expedition" required>
+                  <div class="error-text" *ngIf="editForm.controls.expedition.hasError('required') && editForm.controls.expedition.touched">
+                    <p style="color: brown;">Please enter your expedition </p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>sales_id <span style="color: crimson;">*</span></label>
+                  <!-- <input class="form-control" type="text" formControlName="sales_id" required> -->
+                  <select class="form-select form-select-sm mb-3" aria-label="Default select example" formControlName="sales_id" required>
+                    <option selected value="">pilih salesman</option>
+                    <option *ngFor="let sales of salesList; let i = index" value={{sales._id}}>{{sales.name}}</option>
+                    
+                  </select>
+                  <div class="error-text" *ngIf="editForm.controls.sales_id.hasError('required') && editForm.controls.sales_id.touched">
+                    <p style="color: brown;">Please enter your sales_id </p>
+                  </div>
+                  
+                </div>
+               
+                
+                
+                
+                
+           </div>
+                    
+                  </div>
+                  <div class="modal-footer">
+                    
+                    <button type="button" class="btn btn-primary"   type="submit">Save changes</button>
+                  </div>
+              </form>
+      </div>
+  
+  </div>
+    
